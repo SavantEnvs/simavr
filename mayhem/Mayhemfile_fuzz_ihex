@@ -1,0 +1,9 @@
+project: savantenvs/simavr
+target: fuzz_ihex
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ihex/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_ihex
+    libfuzzer: true
+    timeout: 60

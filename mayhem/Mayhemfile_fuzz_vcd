@@ -1,0 +1,9 @@
+project: savantenvs/simavr
+target: fuzz_vcd
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_vcd/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_vcd
+    libfuzzer: true
+    timeout: 60
